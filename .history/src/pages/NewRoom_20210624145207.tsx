@@ -8,6 +8,7 @@ import { Button } from '../components/Button';
 import '../styles/auth.scss';
 import { useState } from 'react';
 import { database } from '../services/firebase';
+import userEvent from '@testing-library/user-event';
 import { useAuth } from '../hooks/userAuth';
 
 

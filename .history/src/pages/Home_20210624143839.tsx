@@ -30,6 +30,7 @@ export function Home(){
                 <p>Tire as dúvidas da sua audiência em tempo-real</p>
             </aside>
             <main>
+                
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask" />
                     <button className="create-room" onClick={handleCreateRoom}>
