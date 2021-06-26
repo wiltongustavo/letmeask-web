@@ -21,7 +21,17 @@ export function Home(){
     if (!user) {
       await signInWithGoogle()
     }
-   
+    toast.success('Copiado com Sucesso!!', {
+        style: {
+          border: '1px solid green',
+          padding: '16px',
+          color: 'green',
+        },
+        iconTheme: {
+          primary: 'green',
+          secondary: '#FFFAEE',
+        },
+      });
 
     history.push('/rooms/new');
   }
@@ -37,7 +47,6 @@ export function Home(){
 
         if(!roomRef.exists()){
             toast.error('You must be logged in');
-            
             return;
         }
 
@@ -47,10 +56,6 @@ export function Home(){
 
     return(
         <div id="page-auth">
-            <Toaster 
-                position="top-right"
-                reverseOrder={false}
-             />
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
@@ -74,7 +79,10 @@ export function Home(){
                         <Button  type="submit">
                             Entrar na salas
                         </Button>
-                        
+                        <Toaster 
+                        position="top-right"
+                        reverseOrder={false}
+                        />
                     </form>
                 </div>
             </main>

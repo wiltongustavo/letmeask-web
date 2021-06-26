@@ -54,7 +54,6 @@ export function Room(){
           primary: 'green',
           secondary: '#FFFAEE',
         },
-        duration: 3000
       });
 
     

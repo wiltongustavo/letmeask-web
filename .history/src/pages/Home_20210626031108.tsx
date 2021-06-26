@@ -21,7 +21,18 @@ export function Home(){
     if (!user) {
       await signInWithGoogle()
     }
-   
+    toast.success('Login Efetuado com Sucesso!!', {
+        style: {
+          border: '1px solid green',
+          padding: '16px',
+          color: 'green',
+        },
+        iconTheme: {
+          primary: 'green',
+          secondary: '#FFFAEE',
+        },
+        duration: 5000,
+      });
 
     history.push('/rooms/new');
   }
@@ -37,7 +48,6 @@ export function Home(){
 
         if(!roomRef.exists()){
             toast.error('You must be logged in');
-            
             return;
         }
 

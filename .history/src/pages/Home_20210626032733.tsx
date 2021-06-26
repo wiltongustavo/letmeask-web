@@ -36,8 +36,14 @@ export function Home(){
         const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
         if(!roomRef.exists()){
-            toast.error('You must be logged in');
-            
+            toast.promise(
+                saveSettings(settings),
+                 {
+                   loading: 'Saving...',
+                   success: <b>Settings saved!</b>,
+                   error: <b>Could not save.</b>,
+                 }
+               );
             return;
         }
 

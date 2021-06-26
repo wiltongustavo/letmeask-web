@@ -37,7 +37,6 @@ export function Home(){
 
         if(!roomRef.exists()){
             toast.error('You must be logged in');
-            
             return;
         }
 

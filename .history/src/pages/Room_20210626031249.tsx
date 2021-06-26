@@ -44,20 +44,9 @@ export function Room(){
     const roomId = params.id
     const [questions, setQuestions] = useState<Question[]>([])
     const [title, setTitle] = useState('');
-    const notifySendSucess = () => toast.success('Pergunta enviada com Sucesso!!', {
-        style: {
-          border: '1px solid green',
-          padding: '16px',
-          color: 'green',
-        },
-        iconTheme: {
-          primary: 'green',
-          secondary: '#FFFAEE',
-        },
-        duration: 3000
-      });
-
+    const notifySendSucess = () => toast('Pergunta enviada com Sucesso!!');
     
+
     useEffect(() => { 
         const roomRef = database.ref(`rooms/${roomId}`);
 
