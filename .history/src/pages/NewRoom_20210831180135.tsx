@@ -1,7 +1,7 @@
 
 import { Link, useHistory } from 'react-router-dom';
 import { FormEvent} from 'react';
-import '../styles/global.scss'
+'../styles/global.scss'
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import { Button } from '../components/Button';

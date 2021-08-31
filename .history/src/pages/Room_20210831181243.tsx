@@ -21,7 +21,7 @@ type FirebaseQuestions =  Record<string, {
     isHighLighted: boolean;
 }>
 
-type QuestionType = {
+type Question = {
     id: string;
     author:{
         name: string;
@@ -44,7 +44,7 @@ export function Room(){
     const params = useParams<RoomParams>();
     const [ newQuestion, setNewQuestion] = useState(''); 
     const roomId = params.id
-    const [questions, setQuestions] = useState<QuestionType[]>([])
+    const [questions, setQuestions] = useState<Question[]>([])
     const [title, setTitle] = useState('');
     const notifySendSucess = () => toast.success('Pergunta enviada com Sucesso!!', {
         style: {
@@ -146,17 +146,15 @@ export function Room(){
                     </div>
                     
                 </form>
-               <div className="question-list">                 
+
                 {questions.map(question => {
                     return(
                         <Question
-                            key={question.id}
                             content={question.content}
                             author={question.author}
                         />
                     )
                 })}
-                </div>
             </main>
         </div>
     );
